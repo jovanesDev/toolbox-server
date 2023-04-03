@@ -4,7 +4,7 @@ function optimizeData(data) {
     .slice(1)
     .map((line) => {
       const [file, text, number, hex] = line.split(",");
-      const isNumber = /^\d+o?$/.test(number);
+      const isNumber = /^-?\d+$/.test(number);
       const isHex = /^[0-9a-fA-F]+$/i.test(hex);
       return {
         file,
