@@ -28,18 +28,17 @@ const getFiles = async (req, res) => {
     const finalResultFiles = result.filter(Boolean);
     res.status(200).send(finalResultFiles);
   } catch (error) {
-    res.status(500).send('Internal Error');
+    res.status(500).send("Internal Error");
   }
 };
 
-const getFilesList = async (req,res) => {
-
+const getFilesList = async (req, res) => {
   try {
     const response = await axiosClient.get("/files");
-    res.status(200).send(response.data)
+    res.status(200).send(response.data);
   } catch (error) {
-    console.log('Internal error')
+    console.log("Internal error");
   }
-}
+};
 
-export { getFiles , getFilesList};
+export { getFiles, getFilesList };
