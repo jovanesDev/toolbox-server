@@ -23,7 +23,7 @@ const getFiles = async (req, res) => {
       const finalResultFile = result.find(
         (item) => item?.file.toLowerCase() === params?.fileName.toLowerCase()
       );
-      res.status(200).send(finalResultFile ? [finalResultFile] : []);
+     return res.status(200).send(finalResultFile ? [finalResultFile] : []);
     }
     const finalResultFiles = result.filter(Boolean);
     res.status(200).send(finalResultFiles);
